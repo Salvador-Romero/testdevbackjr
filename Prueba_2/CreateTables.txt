@@ -1,0 +1,24 @@
+Create database Prueba
+
+Create table usuarios(
+	[userid] [int] IDENTITY(1,1) NOT NULL,
+	[Login] [varchar](100),
+	[Nombre] [varchar](100),
+	[Paterno] [varchar](100),
+	[Materno] [varchar](100),
+
+	PRIMARY KEY (userid)
+)
+
+if exists (select 1 from sys.objects where object_id = OBJECT_ID(N'[FKC88B50993EFD9871]') AND parent_object_id = OBJECT_ID('[Prueba].[dbo].[usuarios]'))
+alter table  empleados drop constraint FKC88B50993EFD9871
+
+Create table empleados(
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[userid] [int],
+	[Sueldo] [float](53),
+	[FechaIngreso] [datetime],
+	PRIMARY KEY (Id)
+)
+
+alter table empleados add constraint FKC88B50993EFD9871 foreign key (userid) references [Prueba].[dbo].[usuarios]

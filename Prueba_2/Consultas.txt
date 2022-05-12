@@ -1,0 +1,14 @@
+1.-
+select * from [Prueba].[dbo].[usuarios]  where userid <> 6 and userid <> 7 and userid <> 9 and userid <> 10
+
+2.-
+Update [Prueba].[dbo].[empleados] set Sueldo = ((Sueldo * .10)+Sueldo) where FechaIngreso BETWEEN '2000-01-01' AND '2001-12-31'
+
+3.-
+select  US.Nombre, Emp.FechaIngreso from [Prueba].[dbo].[usuarios] AS US INNER JOIN [Prueba].[dbo].[empleados] AS Emp ON US.userid = Emp.userid where Emp.Sueldo > 10000 and US.Paterno like 'T%' order by Emp.FechaIngreso desc 
+
+4.-
+select  Emp.Sueldo  from [Prueba].[dbo].[usuarios] AS US INNER JOIN [Prueba].[dbo].[empleados] AS Emp ON US.userid = Emp.userid where Emp.Sueldo >= 1200   group by Emp.Sueldo 
+
+
+select  Emp.Sueldo  from [Prueba].[dbo].[usuarios] AS US INNER JOIN [Prueba].[dbo].[empleados] AS Emp ON US.userid = Emp.userid where Emp.Sueldo < 1200   group by Emp.Sueldo 
