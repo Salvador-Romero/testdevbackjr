@@ -14,7 +14,7 @@ public class GestionDatos
     public SqlConnection conexion;
     public SqlTransaction transaccion;
     public string error;
-    SqlConnection conexio1 = new SqlConnection("Data Source=DE-BSTQMC2\\QDOC; Initial Catalog=Prueba;User ID=sa;Password=Desarrollo2.;Application Name=QM2");
+    SqlConnection conexio1 = new SqlConnection("Data Source=DE-BSTQMC2; Initial Catalog=Prueba;User ID=;Password=;Application Name=QM2");
 
     public bool agregarPersona(Persona usuario)
     {
